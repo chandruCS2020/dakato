@@ -1,6 +1,8 @@
 import { API } from "../config";
 export const signup = (user) => {
     // console.log(name, email, password);
+    const form = new FormData();
+    form.append("email",user);
     return fetch(`http://localhost:5000/signup`, {
         method: 'POST',
         headers: {

@@ -2,9 +2,11 @@ import React, { useState, useCallback, useEffect, useRef } from "react";
 import ImageMapper from 'react-img-mapper';
 import Slider from '@mui/material/Slider';
 import Layout from "./Layout";
+import { useLocation } from "react-router-dom";
 
 const Signinmap = props => {
         const [query, setQuery] = useState(1);
+        const location = useLocation();
         const [coordinates, setcoordinates] = useState([]);
     const [mapAreas, setMapAreas] = useState({
         name: "my-map",
@@ -40,7 +42,7 @@ const Signinmap = props => {
         console.log("firstnv vbvnbmbmbnbbjbnjdvvdfjvbjbbssssjb");
     }
     useEffect(() => {
-        location.reload();
+        window.location.reload();
     }, [])
     
     function images(){
