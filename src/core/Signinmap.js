@@ -48,7 +48,7 @@ const Signinmap = props => {
         event.preventDefault(); // so that browser does not reload
         setValues({ ...values, error: false ,loading:true});
         const data1 = {
-            "id":JSON.parse(localStorage.getItem('user')),
+            "id":JSON.parse(localStorage.getItem('userid')),
             "points":coordinates
         }
         fetch(`https://api-dakato.herokuapp.com/login`, {
