@@ -77,7 +77,7 @@ export default function Map(props) {
                     setValues({ ...values, error: "something went wrong", success: false ,loading:false});
                 }
             }catch(err){
-                console.log(err);
+                console.log(err.message);
                 setValues({ ...values, error: "something went wrong", success: false,loading:false });
             }
         }
