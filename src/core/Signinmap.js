@@ -3,6 +3,8 @@ import ImageMapper from 'react-img-mapper';
 import Slider from '@mui/material/Slider';
 import Layout from "./Layout";
 import { useLocation } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import { isAuthenticated } from "../auth";
 
 const Signinmap = props => {
         const [query, setQuery] = useState(1);
