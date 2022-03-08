@@ -70,7 +70,6 @@ const clickSubmit = (event) => {
             },
             body: JSON.stringify(data1),
         }).then((data) => {
-            console.log(data.text());
             data.text().then((text)=>{
                 setValues({ ...values, error: text, success: false,loading:false });
             })
