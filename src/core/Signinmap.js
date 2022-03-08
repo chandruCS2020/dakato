@@ -74,6 +74,7 @@ const Signinmap = props => {
             });
             data.text().then((text)=>{
                 localStorage.setItem("jwt",text);
+                <Redirect to='/' />
             })
         }
         });

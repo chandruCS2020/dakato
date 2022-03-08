@@ -418,3 +418,9 @@ input[type="checkbox"][id^="myCheckbox"] {
   color: #00FF00;
   text-transform: uppercase;
 }
+@media screen and (max-width:564px){
+  .home h1{
+    font-size: 15px;
+    text-align: center;
+  }
+}
