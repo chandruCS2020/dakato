@@ -45,7 +45,7 @@ const Signinmap = props => {
                 <div className="mapper">
                     
                     <ImageMapper 
-                        src={'https://api-dakato.herokuapp.com/image/'+localStorage.getItem('userid')}
+                        src={'https://api-dakato.herokuapp.com/image/'+JSON.parse(localStorage.getItem('userid'))}
                         onImageClick={handleUpdateMapArea}
                         width={400}
                         map={mapAreas}
