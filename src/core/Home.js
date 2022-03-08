@@ -8,7 +8,7 @@ export default function Home() {
     <>
         <Layout>
             <div className="home">
-                  <h1>Welcome to <span className='dak'>Dakato    </span><span>{JSON.parse(localStorage.getItem("jwt")).username}</span></h1>
+                  <h1>Welcome to <span className='dak'>Dakato    </span><span>{localStorage.getItem('jwt') ? JSON.parse(localStorage.getItem("jwt")).username : "anonymous user"}</span></h1>
               </div>
         </Layout>
         <Copyright />
