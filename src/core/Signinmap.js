@@ -59,9 +59,7 @@ const Signinmap = props => {
                 },
                 body: JSON.stringify(data1),
             }).then((data) => {
-                data.text().then((text)=>{
-                    localStorage.setItem("jwt",text);
-                })
+                
         if (data.status!==200) {
             setValues({ ...values, error: "something went wrong", loading:false,success: false });
         } else {
@@ -72,6 +70,9 @@ const Signinmap = props => {
             loading:false,
             success: true,
             });
+            data.text().then((text)=>{
+                localStorage.setItem("jwt",text);
+            })
         }
         });
     };
