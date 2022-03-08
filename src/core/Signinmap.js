@@ -41,9 +41,7 @@ const Signinmap = props => {
         e.preventDefault();
         console.log("firstnv vbvnbmbmbnbbjbnjdvvdfjvbjbbssssjb");
     }
-    useEffect(() => {
-        window.location.reload();
-    }, [])
+    
     
     function images(){
         return(
