@@ -398,3 +398,23 @@ input[type="checkbox"][id^="myCheckbox"] {
   justify-content: center;
   align-items: center;
 }
+.home{
+  width: 100vw;
+  height: calc(100vh - 64px);
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home h1{
+  color: #000080;
+  text-transform: capitalize;
+  font-size: 50px;
+}
+.home h1 span{
+  text-transform: lowercase;
+}
+.home .dak{
+  color: #00FF00;
+  text-transform: uppercase;
+}
