@@ -56,7 +56,7 @@ export default function Gpa2() {
                         <input
                             name="upload-photo"
                             type="file"
-                            accept=".png"
+                            accept=".png,.jpg,.jpeg"
                             required
                             onChange={handleProductPictures}
                             // disabled={image.length == row * row ? true : false}

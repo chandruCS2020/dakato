@@ -146,6 +146,7 @@ const signUpForm = () => (
             color='primary'
             className={classes.submit}
             onClick={clickSubmit}
+            disabled={loading}
         >
             Verify
         </Button>
