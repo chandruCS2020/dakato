@@ -70,7 +70,7 @@ const clickSubmit = (event) => {
             body: JSON.stringify(data1),
         }).then((data) => {
             data.text().then((text)=>{
-                localStorage.setItem("userid",JSON.stringify(text));
+                localStorage.setItem("userid",text);
             })
     if (data.status!==200) {
         setValues({ ...values, error: "user not exist", loading:false,success: false });
