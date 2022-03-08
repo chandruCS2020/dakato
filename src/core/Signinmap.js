@@ -77,7 +77,11 @@ const Signinmap = props => {
         });
     };
     
-    
+    const redirectUser = () => {
+        if (isAuthenticated()) {
+        return <Redirect to='/' />;
+        }
+    };
     
     function images(){
         return(
@@ -113,6 +117,7 @@ const Signinmap = props => {
     return (
             <>
                 <Layout>
+                    {redirectUser()}
                 <div className='Gpa'>
                     <div className='gpa_head'>
                         <h1 className='Gpa_title'>Graphical Password Authentication</h1>  
@@ -122,7 +127,7 @@ const Signinmap = props => {
                     <div className='btns' style={{display:'flex',justifyContent:'center',marginTop:'10px'}}>
                     <button className='btn' onClick={clickSubmit}
                     >
-                    Register    
+                    Login
                 </button> 
                 </div>
                 </div>
