@@ -143,7 +143,6 @@ export default function Map(props) {
                     <MenuItem value={50}>50</MenuItem>
                     <MenuItem value={80}>80</MenuItem>
                     <MenuItem value={100}>100</MenuItem>
-                    <MenuItem value={200}>200</MenuItem>
                     </Select>
                 </FormControl>
                 </div>
