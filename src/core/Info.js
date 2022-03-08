@@ -61,7 +61,7 @@ const clickSubmit = (event) => {
     const data1 = {
         "email":email
     }
-    fetch(`https://api-dakato.herokuapp.com/email-verification`, {
+    fetch(`https://api-dakato.herokuapp.com/login`, {
             method: 'POST',
             headers: {
             Accept: 'application/json',
