@@ -5,6 +5,7 @@ import Layout from "./Layout";
 import { useLocation } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { isAuthenticated } from "../auth";
+import { Box, LinearProgress } from "@mui/material";
 
 const Signinmap = props => {
         const [query, setQuery] = useState(1);
@@ -74,7 +75,7 @@ const Signinmap = props => {
             });
             data.text().then((text)=>{
                 localStorage.setItem("jwt",text);
-                <Redirect to='/' />
+                location.push('/');
             })
         }
         });
@@ -89,6 +90,11 @@ const Signinmap = props => {
     function images(){
         return(
             <div style={{ display: 'flex' ,justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+                {loading && <>
+                    <Box sx={{ width: '100%',margin:'50px 0 20px 0' }}>
+                        <LinearProgress />
+                    </Box>
+                </>}
                 <div className="mapper">
                     
                     <ImageMapper 
