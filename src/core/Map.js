@@ -24,11 +24,12 @@ export default function Map(props) {
         setrow(e.target.value);
     }
     console.log(row)
+    const [seq, setseq] = useState(-1);
     const handleChange = (e) => {
         // Destructuring
         const { value, checked } = e.target;
         const { languages } = userinfo;
-        
+        setseq(seq+1);
         // Case 1 : The user checks the box
         if (checked) {
         setUserInfo({
@@ -63,7 +64,7 @@ export default function Map(props) {
                                                         }
                                                     }
                                                 );
-                                                console.log(res.status)
+                                                console.log(res)
                 if(res.status===200){
                     setValues({
                         ...values,
@@ -102,18 +103,20 @@ export default function Map(props) {
         New account is created. Please <Link to='/signin'>Signin</Link>.
         </div>
     );
-    function grid(row){
+    
+    function grid(row,seq){
         var grids=[];
         for(let i=0;i<(Math.round(400/row * 400/row));i++){
             grids.push(<div style={{height:`${row}px`,width:`${row}px`}} className="divspan">
 
                 <input className="checks" type="checkbox" id={i} value={i+1} onChange={handleChange} hidden/>
-                <label className="labels" htmlFor={i}></label>
+                <label className="labels" htmlFor={i}>{userinfo.languages[seq]===i+1 ? seq+1 : ''}</label>
             </div>);
         }
         return grids;
     }
-    console.log(userinfo.languages.length)
+    console.log(seq)
+    console.log(userinfo.languages[seq])
     return (
         <>
             {loading && <>
@@ -151,7 +154,7 @@ export default function Map(props) {
             <div className='Mappers'>
                 <img src={props.src} alt='' />
                 <div className='grids'>
-                    {grid(row)}    
+                    {grid(row,seq)}    
                 </div>    
                 <div className='btns' style={{display:'flex',justifyContent:'center',marginTop:'10px'}}>
                     <button className='btn' disabled={userinfo.languages.length===3 ? false : true} onClick={clickSubmit}
