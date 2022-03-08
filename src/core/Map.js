@@ -64,7 +64,7 @@ export default function Map(props) {
                                                         }
                                                     }
                                                 );
-                                                console.log(res)
+                                                console.log(res.status)
                 if(res.status===200){
                     setValues({
                         ...values,
@@ -74,13 +74,11 @@ export default function Map(props) {
                         success: true,
                         });
                 }else if(res.status!==200) {
-                    setValues({ ...values, error: res.data, success: false ,loading:false});
-                }else if(res.status===404){
-                    setValues({ ...values, error: res.data, success: false ,loading:false});
+                    setValues({ ...values, error: "something went wrong", success: false ,loading:false});
                 }
             }catch(err){
-                console.log(err.message);
-                setValues({ ...values, error: "User already exist", success: false,loading:false });
+                console.log(err);
+                setValues({ ...values, error: "something went wrong", success: false,loading:false });
             }
         }
         send();
