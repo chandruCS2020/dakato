@@ -70,9 +70,12 @@ const clickSubmit = (event) => {
             },
             body: JSON.stringify(data1),
         }).then((data) => {
-            console.log(data)
+            console.log(data.text());
+            data.text().then((text)=>{
+                setValues({ ...values, error: text, success: false,loading:false });
+            })
     if (data.status!==200) {
-        setValues({ ...values, error: data, success: false,loading:false });
+        setValues({ ...values, error: "something went wrong", success: false,loading:false });
     } else {
         setValues({
         ...values,
