@@ -37,7 +37,7 @@ const Signinmap = props => {
     console.log(coordinates)
     const clickSubmit = (e)=>{
         e.preventDefault();
-        console.log("first");
+        console.log("firstnv vbvnbmbmb");
     }
     useEffect(() => {
         location.reload();
