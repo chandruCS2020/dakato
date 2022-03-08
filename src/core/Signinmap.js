@@ -37,10 +37,45 @@ const Signinmap = props => {
         });
     };
     console.log(coordinates)
-    const clickSubmit = (e)=>{
-        e.preventDefault();
-        console.log("firstnv vbvnbmbmbnbbjbnjdvvdfjvbjbbssssjb");
-    }
+    const [values, setValues] = useState({
+        email: '',
+        error: '',
+        loading:'',
+        success: false,
+    });
+    const { email, success, error ,loading} = values;
+    const clickSubmit = (event) => {
+        event.preventDefault(); // so that browser does not reload
+        setValues({ ...values, error: false ,loading:true});
+        const data1 = {
+            "id":JSON.parse(localStorage.getItem('user')),
+            "points":coordinates
+        }
+        fetch(`https://api-dakato.herokuapp.com/login`, {
+                method: 'POST',
+                headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data1),
+            }).then((data) => {
+                data.text().then((text)=>{
+                    localStorage.setItem("jwt",text);
+                })
+        if (data.status!==200) {
+            setValues({ ...values, error: "something went wrong", loading:false,success: false });
+        } else {
+            setValues({
+            ...values,
+            email: '',
+            error: '',
+            loading:false,
+            success: true,
+            });
+        }
+        });
+    };
+    
     
     
     function images(){
