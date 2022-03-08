@@ -77,9 +77,7 @@ const Signinmap = props => {
             });
             data.text().then((text)=>{
                 localStorage.setItem("jwt",text);
-                location.push('/');
             })
-            history.push('/');
         }
         });
     };
@@ -128,8 +126,8 @@ const Signinmap = props => {
     }
     return (
             <>
+             {redirectUser()}
                 <Layout>
-                    {redirectUser()}
                 <div className='Gpa'>
                     <div className='gpa_head'>
                         <h1 className='Gpa_title'>Graphical Password Authentication</h1>  
