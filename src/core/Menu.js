@@ -145,37 +145,6 @@ const renderMobileMenu = (
     onClose={handleMobileMenuClose}
     >
     <div style={{ backgroundColor: '#404040' }}>
-        {isAuthenticated() &&  (
-        <>
-            <MenuItem>
-            <Link
-            style={isActive(history, '/user/dashboard')}
-            to='/user/dashboard'
-            >
-            <IconButton aria-label='Dashboard' color='inherit'>
-                <DashboardIcon />
-            </IconButton>
-            Dashboard
-            </Link>
-            
-        </MenuItem>
-        </>
-        )}
-
-        {isAuthenticated() && (
-        <MenuItem>
-            <Link
-            style={isActive(history, '/admin/dashboard')}
-            to='/admin/dashboard'
-            >
-            <IconButton aria-label='Dashboard' color='inherit'>
-                <DashboardIcon />
-            </IconButton>
-            Dashboard
-            </Link>
-        </MenuItem>
-        )}
-
         {!isAuthenticated() && (
         <Fragment>
             <MenuItem>

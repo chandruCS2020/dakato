@@ -22,10 +22,8 @@ const App = () => {
         <Route path='/signin' component={Info} exact />
         <Route path='/signup' component={Signup} exact />
         <Route path='/info' component={Info} exact />
-        <Route path='/signup/gpa1' component={Gpa1} exact />
         <Route path='/signup/gpa2' component={Gpa2} exact />
         <Route path='/signinmap' component={Signinmap} exact />
-        <Route path='/g' component={Map} exact />
         <PrivateRoute path='/' component={Home} exact />
         <Route component={NotFound} />
         
