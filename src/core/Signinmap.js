@@ -39,6 +39,10 @@ const Signinmap = props => {
         e.preventDefault();
         console.log("first");
     }
+    useEffect(() => {
+        location.reload();
+    }, [])
+    
     function images(){
         return(
             <div style={{ display: 'flex' ,justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
