@@ -6,10 +6,12 @@ import { useLocation } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { isAuthenticated } from "../auth";
 import { Box, LinearProgress } from "@mui/material";
+import { useHistory } from "react-router-dom";
 
 const Signinmap = props => {
         const [query, setQuery] = useState(1);
         const location = useLocation();
+        const history = useHistory();
         const [coordinates, setcoordinates] = useState([]);
     const [mapAreas, setMapAreas] = useState({
         name: "my-map",
@@ -77,6 +79,7 @@ const Signinmap = props => {
                 localStorage.setItem("jwt",text);
                 location.push('/');
             })
+            history.push('/');
         }
         });
     };
@@ -91,7 +94,7 @@ const Signinmap = props => {
         return(
             <div style={{ display: 'flex' ,justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
                 {loading && <>
-                    <Box sx={{ width: '100%',margin:'50px 0 20px 0' }}>
+                    <Box sx={{ width: '100%',maxWidth:'400px',margin:'50px auto 20px auto' }}>
                         <LinearProgress />
                     </Box>
                 </>}
